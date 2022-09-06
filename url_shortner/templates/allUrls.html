@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"></script>
+    <title>URL SHORTENER</title>
+</head>
+<body>
+  <p><a type="button" href="{{ url_for('short_url') }}">Main page</a></p>
+  {% if urls %}
+    <ul>
+      {% for url in urls %}
+        <li><strong>Main: </strong>{{ url.url }}</li>
+        <li><strong>Short: </strong>{{ url.short_url }}</li><br>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
